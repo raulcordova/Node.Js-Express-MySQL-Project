@@ -45,7 +45,7 @@ app.use(require('express-status-monitor')({
   healthChecks: [{
     protocol: 'http',
     host: 'localhost',
-    path: '/api/',
+    path: '/',
     port: '3000'
   }]
 }));
@@ -120,7 +120,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'ficon.ico')));
 
 // Linking routes
-app.use('/', routes);
+app.use('/api/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
